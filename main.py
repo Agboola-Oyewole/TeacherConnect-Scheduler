@@ -21,8 +21,6 @@ from googleapiclient.errors import HttpError
 app = Flask(__name__)
 load_dotenv()
 
-# SECRET_KEY='drsvpicgdtbiribs'
-# FIRST_EMAIL='emmanueladeyemi472@gmail.com'
 EMAIL_ADDRESS = os.getenv('FIRST_EMAIL')
 EMAIL_PASSWORD = os.getenv('SECRET_KEY')
 
