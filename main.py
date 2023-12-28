@@ -36,9 +36,7 @@ app.config['MAIL_PASSWORD'] = EMAIL_PASSWORD
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
-SERVICE_ACCOUNT_FILE = 'test-project-405423-6eab057ee9fe.json'
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-CALENDAR_ID = 'bankoleagb@gmail.com'
 
 # Initialize the mail extension
 mail.init_app(app)
