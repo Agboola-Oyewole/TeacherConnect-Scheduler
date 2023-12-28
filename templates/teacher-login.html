@@ -1,0 +1,85 @@
+<title>{% block title %}Teachers - Sign In{% endblock %}</title>
+{% include "logreg-header.html" %}
+<div class="row d-flex justify-content-end align-items-center">
+          <div class="col-md-6 py-5">
+            <div
+              style="
+                background-color: rgba(219, 151, 23, 0.7);
+                border-radius: 15px;
+              "
+              class="card">
+              <div class="card-body py-3 px-5">
+                <!-- Adjusted padding -->
+                <h2
+                  class="text-center mb-3 mt-4"
+                  style="font-size: 1.5rem; color: white">
+                  Sign In (Teachers)
+                </h2>
+                <!-- Adjusted font size -->
+                <div class="px-2 d-flex flex-row align-items-center mb-2 mt-3">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div style="color: white;" class="alert {{ category }}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                </div>
+                <form method="post">
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="username"
+                      placeholder="Username"
+                      type="text"
+                      id="form3Example1cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="password"
+                      placeholder="Password"
+                      type="password"
+                      id="form3Example4cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+
+                  <div class="d-flex justify-content-center">
+                    <button
+                      style="background-color: white; font-size: 1rem"
+                      type="submit"
+                      class="btn rounded-5 btn-lg text-body">
+                      Sign In
+                    </button>
+                    <!-- Adjusted font size -->
+                  </div>
+                  <p class="text-center mt-3">
+                  Not a member? <a style="color: red; text-decoration: underline; margin-left: 10px;" data-toggle="tab" href="{{ url_for('teacher_sign_up') }}"><strong>Sign Up</strong></a>
+                </p>
+
+                  <a
+                    style="color: red; text-decoration: none"
+                    href="{{url_for('dashboard')}}"
+                    class="fw-bold"
+                    ><p
+                      class="text-center text-muted mt-3 mb-0"
+                      style="font-size: 0.8rem">
+                      <!-- Adjusted font size -->
+                      <b>Forgot Password?</b>
+                    </p></a
+                  >
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

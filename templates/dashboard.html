@@ -1,0 +1,54 @@
+<title>{% block title %}{{current_user.username}}'s Dashboard{% endblock %}</title>
+{% include "header.html" %}
+ <div class="container">
+        <div class="row">
+            {% if course_item | length == 0 %}
+            <div class="d-flex justify-content-center align-items-center pt-5 pb-5 mt-5"><h4>No added courses at the moment!</h4></div>
+            <div class="d-flex justify-content-center">
+                    <a
+                            href="{{url_for('add_courses')}}"
+                      style="background-color: black; font-size: 1rem; color: white;"
+                      type="button"
+                      class="btn rounded-5 btn-lg">
+                      Add
+                    </a>
+                    <!-- Adjusted font size -->
+                  </div>
+            {% else %}
+          {% for course in course_item %}
+  <div class="col-lg-4 col-md-6 my-3">
+    <a href="{{url_for('contacts', course_id=course.course_id)}}" style="text-decoration: none; color: black;">
+      <div class="card shadow">
+        <div class="card-img-top p-3" style="
+            background-color: {{course.dash_post.card_color}};
+            height: 130px;
+            display: flex;
+            justify-content: flex-end;
+          ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+          </svg>
+        </div>
+
+        <div class="card-body">
+          <h6 style="color: {{course.dash_post.card_color}}" class="card-title">
+            {{course.dash_post.names}}
+          </h6>
+          <p class="card-text mb-1">{{course.dash_post.codes}}</p>
+          <p class="card-text">{{course.dash_post.season}}</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Your modal code here -->
+  </div>
+{% endfor %}
+
+    {% endif %}
+
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>

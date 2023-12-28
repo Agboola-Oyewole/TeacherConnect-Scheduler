@@ -1,0 +1,138 @@
+{% include "logreg-header.html" %}
+
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="px-5">
+            <div
+              style="
+                background-color: rgba(219, 151, 23, 0.7);
+                border-radius: 15px;
+              "
+              class="card px-5">
+              <div class="card-body py-3 px-5">
+                <!-- Adjusted padding -->
+                <h2
+                  class="text-center mb-3 mt-4"
+                  style="font-size: 1.5rem; color: white">
+                  Sign Up (Students)
+                </h2>
+                <!-- Adjusted font size -->
+                <div class="px-2 d-flex flex-row align-items-center mb-2 mt-3">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div style="color: white;" class="alert {{ category }}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                </div>
+                <form method="post" id="signup-form">
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="full_name"
+                      placeholder="Full Name"
+                      type="text"
+                            style="width: 277px;"
+                      id="form3Example1cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="username"
+                      placeholder="Username"
+                      type="text"
+                      id="form3Example1cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                  <select name="gender" class="form-select" aria-label="Default select example">
+
+                  <option selected value="">Gender</option>
+                <option value="M" type="submit">Male</option>
+                      <option value="F" type="submit">Female</option>
+                  </select>
+                    </div>
+
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="email"
+                      placeholder="Email"
+                      type="email"
+                      id="form3Example3cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="password"
+                      placeholder="Password"
+                      type="password"
+                      id="form3Example4cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="repeat"
+                      placeholder="Confirm Password"
+                      type="password"
+                      id="form3Example4cdg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <button
+                      style="background-color: white; font-size: 1rem"
+                      type="submit"
+                      class="btn rounded-5 btn-lg text-body">
+                      Sign Up
+                    </button>
+                    <!-- Adjusted font size -->
+                  </div>
+
+                  <p
+                    class="text-center text-muted mt-3 mb-0"
+                    style="font-size: 0.8rem">
+                    <!-- Adjusted font size -->
+                    <b>Existing account?</b>
+                    <a
+                      style="color: red; text-decoration: none"
+                      href="{{url_for('home_sign_in')}}"
+                      class="fw-bold"
+                      >Login in</a
+                    >
+                  </p>
+                  <p
+                    class="text-center text-muted mt-3 mb-4"
+                    style="font-size: 0.8rem">
+                    <!-- Adjusted font size -->
+                    <b>Are you a teacher?</b>
+                    <a
+                      style="color: red; text-decoration: none"
+                      href="{{url_for('teacher_sign_up')}}"
+                      class="fw-bold"
+                      >Click here to sign up</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

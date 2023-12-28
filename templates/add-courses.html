@@ -1,0 +1,60 @@
+<title>{% block title %}Add courses{% endblock %}</title>
+{% include "logreg-header.html" %}
+
+        <div class="d-flex justify-content-center align-items-center">
+
+          <div class="col-md-6">
+            <div style="background-color: #ebebec" class="card mb-3 rounded-5">
+              <div class="card-body px-5 py-3">
+                <h2 class="text-center mb-4 mt-3" style="font-size: 1.5rem">
+                  Select All Your Courses
+                </h2>
+                <form method="post" id="courses-form">
+    {% for course in courses %}
+    <div style="display: flex" class="mb-4">
+        <div class="form-check px-2">
+            <input
+                name="checkbox{{ course.id }}"
+                class="form-check-input"
+                type="checkbox"
+                value="{{ course.id }}"
+                id="flexCheckDefault{{ course.id }}" />
+        </div>
+        <div
+            id="div{{ course.id }}"
+            class="shadow py-1 px-3"
+            style="flex-wrap: wrap; width: 100%; height: 100%; background-color: white;">
+            <b>{{ course.names }}</b>
+        </div>
+    </div>
+    {% endfor %}
+                    <div class="d-flex justify-content-center">
+                    <button
+                      style="background-color: black; font-size: 1rem; color: white;"
+                      type="submit"
+                      class="btn rounded-5 btn-lg">
+                      Add
+                    </button>
+                    <!-- Adjusted font size -->
+                  </div>
+                    <p
+                    class="text-center text-muted mt-3 mb-0"
+                    style="font-size: 0.8rem">
+                    <!-- Adjusted font size -->
+                    <a
+                      style="color: black; text-decoration: none"
+                      href="{{url_for('dashboard')}}"
+                      class="fw-bold"
+                      >Back to Dashboard</a
+                    >
+                  </p>
+</form>
+
+              </div>
+            </div>
+          </div>
+           </div>
+      </div>
+    </section>
+  </body>
+</html>

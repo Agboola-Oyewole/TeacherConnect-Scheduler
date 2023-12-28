@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher - Sign Up</title>
+    <!-- Bootstap scripts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;800&family=Quicksand&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2b5c91c297.js"
+      crossorigin="anonymous"></script>
+    <style>
+      .alert.success {
+          background-color: green;
+          color: white;
+        }
+
+
+.alert.error {
+  background-color: red;
+  color: white;
+}
+      .background-section {
+        /* Set the background image from a URL */
+        background-image: url("../static/back-image.jpg");
+
+        /* Set background size to cover the entire section */
+        background-size: cover;
+
+        /* Set background position to center */
+        background-position: center;
+
+        /* Set background attachment to fixed if you want a fixed background */
+        background-attachment: fixed;
+
+        /* Set a height for your section (adjust as needed) */
+        height: 100%;
+
+        /* Add other styles as needed */
+      }
+    </style>
+  </head>
+  <body>
+    <section style="" class="background-section pb-5">
+      <div class="container pt-3">
+        <h2
+          class="text-left mb-1 mt-1"
+          style="
+            font-size: 3.3rem;
+            color: white;
+            letter-spacing: 3px;
+            font-family: 'DM Serif Display', serif;
+          ">
+          FISK
+        </h2>
+        <h2
+          class="text-left mb-3 mt-1"
+          style="font-size: 1.3rem; color: orange; letter-spacing: 5px">
+          UNIVERSITY
+        </h2>
+
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="px-5">
+            <div
+              style="
+                background-color: rgba(219, 151, 23, 0.7);
+                border-radius: 15px;
+              "
+              class="card px-5">
+              <div class="card-body py-3 px-5">
+                <!-- Adjusted padding -->
+                <h2
+                  class="text-center mb-3 mt-4"
+                  style="font-size: 1.5rem; color: white">
+                  Sign Up (Teacher)
+                </h2>
+                <!-- Adjusted font size -->
+                <div class="px-2 d-flex flex-row align-items-center mb-2 mt-3">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div style="color: white;" class="alert {{ category }}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                </div>
+                <form method="post" id="signup-form">
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            style="width: 280px"
+                            name="fullname"
+                      placeholder="Full Name"
+                      type="text"
+                      id="form3Example1cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="username"
+                      placeholder="Username"
+                      type="text"
+                      id="form3Example1cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="email"
+                      placeholder="Email"
+                      type="email"
+                      id="form3Example3cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+                    <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                  <select name="gender" class="form-select" aria-label="Default select example">
+
+                  <option selected value="">Gender</option>
+                <option value="M" type="submit">Male</option>
+                      <option value="F" type="submit">Female</option>
+                  </select>
+                    </div>
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+ <textarea name="description" class="form-control" id="textAreaExample" placeholder="Describe yourself" rows="4"></textarea>
+
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+                    <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                  <select name="day" class="form-select" aria-label="Default select example">
+
+                  <option selected value="">Availability: (Day)...</option>
+                <option value="Mondays" type="submit">Mondays</option>
+                <option value="Tuesdays" type="submit">Tuesdays</option>
+                      <option value="Wednesdays" type="submit">Wednesdays</option>
+                      <option value="Thursdays" type="submit">Thursdays</option>
+                <option value="Fridays" type="submit">Fridays</option>
+                      <option value="Saturdays" type="submit">Saturdays</option>
+                      <option value="Sundays" type="submit">Sundays</option>
+            </select>
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                  <select name="available1" class="form-select" aria-label="Default select example">
+
+                  <option selected value="">Availability: From (time)...</option>
+                <option value="00:00AM" type="submit">00:00AM</option>
+                <option value="1:00AM" type="submit">1:00AM</option>
+                      <option value="2:00AM" type="submit">2:00AM</option>
+                      <option value="3:00AM" type="submit">3:00AM</option>
+                      <option value="4:00AM" type="submit">4:00AM</option>
+                       <option value="5:00AM" type="submit">5:00AM</option>
+                <option value="6:00AM" type="submit">6:00AM</option>
+                      <option value="7:00AM" type="submit">7:00AM</option>
+                      <option value="8:00AM" type="submit">8:00AM</option>
+                      <option value="9:00AM" type="submit">9:00AM</option>
+                       <option value="10:00AM" type="submit">10:00AM</option>
+                <option value="11:00AM" type="submit">11:00AM</option>
+                      <option value="12:00PM" type="submit">12:00PM</option>
+                      <option value="1:00PM" type="submit">1:00PM</option>
+                      <option value="2:00PM" type="submit">2:00PM</option>
+                       <option value="3:00PM" type="submit">3:00PM</option>
+                <option value="4:00PM" type="submit">4:00PM</option>
+                      <option value="5:00PM" type="submit">5:00PM</option>
+                      <option value="6:00PM" type="submit">6:00PM</option>
+                      <option value="7:00PM" type="submit">7:00PM</option>
+                       <option value="8:00PM" type="submit">8:00PM</option>
+                <option value="9:00PM" type="submit">9:00PM</option>
+                      <option value="10:00PM" type="submit">10:00PM</option>
+                      <option value="11:00PM" type="submit">11:00PM</option>
+                      <option value="12:00AM" type="submit">12:00AM</option>
+            </select>
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+                    <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                  <select name="available2" class="form-select" aria-label="Default select example">
+
+                  <option selected value="">Availability: To (time)...</option>
+                <option value="00:00AM" type="submit">00:00AM</option>
+                <option value="1:00AM" type="submit">1:00AM</option>
+                      <option value="2:00AM" type="submit">2:00AM</option>
+                      <option value="3:00AM" type="submit">3:00AM</option>
+                      <option value="4:00AM" type="submit">4:00AM</option>
+                       <option value="5:00AM" type="submit">5:00AM</option>
+                <option value="6:00AM" type="submit">6:00AM</option>
+                      <option value="7:00AM" type="submit">7:00AM</option>
+                      <option value="8:00AM" type="submit">8:00AM</option>
+                      <option value="9:00AM" type="submit">9:00AM</option>
+                       <option value="10:00AM" type="submit">10:00AM</option>
+                <option value="11:00AM" type="submit">11:00AM</option>
+                      <option value="12:00PM" type="submit">12:00PM</option>
+                      <option value="1:00PM" type="submit">1:00PM</option>
+                      <option value="2:00PM" type="submit">2:00PM</option>
+                       <option value="3:00PM" type="submit">3:00PM</option>
+                <option value="4:00PM" type="submit">4:00PM</option>
+                      <option value="5:00PM" type="submit">5:00PM</option>
+                      <option value="6:00PM" type="submit">6:00PM</option>
+                      <option value="7:00PM" type="submit">7:00PM</option>
+                       <option value="8:00PM" type="submit">8:00PM</option>
+                <option value="9:00PM" type="submit">9:00PM</option>
+                      <option value="10:00PM" type="submit">10:00PM</option>
+                      <option value="11:00PM" type="submit">11:00PM</option>
+                      <option value="12:00AM" type="submit">12:00AM</option>
+            </select>
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="password"
+                      placeholder="Password"
+                      type="password"
+                      id="form3Example4cg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <!-- Adjusted margin-bottom -->
+                    <input
+                            name="repeat"
+                      placeholder="Confirm Password"
+                      type="password"
+                      id="form3Example4cdg"
+                      class="form-control form-control-sm" />
+                    <!-- Adjusted size to form-control-sm -->
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <button
+                      style="background-color: white; font-size: 1rem"
+                      type="submit"
+                      class="btn rounded-5 btn-lg text-body">
+                      Sign Up
+                    </button>
+                    <!-- Adjusted font size -->
+                  </div>
+
+                  <p
+                    class="text-center text-muted mt-3 mb-0"
+                    style="font-size: 0.8rem">
+                    <!-- Adjusted font size -->
+                    <b>Existing account?</b>
+                    <a
+                      style="color: red; text-decoration: none"
+                      href="{{url_for('teacher_sign_in')}}"
+                      class="fw-bold"
+                      >Login in</a
+                    >
+                  </p>
+
+                  <p
+                    class="text-center text-muted mt-3 mb-4"
+                    style="font-size: 0.8rem">
+                    <!-- Adjusted font size -->
+                    <b>Are you a student?</b>
+                    <a
+                      style="color: red; text-decoration: none"
+                      href="{{url_for('home_sign_up')}}"
+                      class="fw-bold"
+                      >Click here to sign up</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
