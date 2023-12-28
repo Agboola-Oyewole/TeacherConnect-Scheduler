@@ -26,8 +26,6 @@ EMAIL_PASSWORD = os.getenv('SECRET_KEY')
 
 mail = Mail(app)
 today = datetime.now()
-#
-# app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465  # Use SSL
